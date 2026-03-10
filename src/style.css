@@ -272,40 +272,7 @@ h4 {
   border-top: 1px solid var(--glass-border);
 }
 
-/* Floating Elements */
-.cart-trigger {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 60px;
-  height: 60px;
-  background: var(--primary);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 30px rgba(255, 87, 34, 0.4);
-  cursor: pointer;
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
 
-.cart-count {
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  background: white;
-  color: var(--primary);
-  font-size: 0.75rem;
-  font-weight: 800;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 /* Navigation & Footer */
 nav {
@@ -342,7 +309,7 @@ a {
   }
 }
 
-/* Modal & Customization Styles retained correctly below... */
+/* Modal Styles retained correctly below... */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -371,46 +338,4 @@ a {
   color: white;
   border-radius: 6px;
   cursor: pointer;
-}
-
-.ingredient-btn {
-  padding: 10px;
-  border-radius: 12px;
-  border: 1px solid var(--glass-border);
-  background: rgba(255, 255, 255, 0.03);
-  color: white;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.ingredient-btn.removed {
-  opacity: 0.4;
-  text-decoration: line-through;
-}
-
-.ingredient-btn.added {
-  background: rgba(255, 179, 0, 0.1);
-  border-color: var(--accent);
-}
-
-.checkout-form {
-  display: grid;
-  gap: 1rem;
-}
-
-.form-input {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--glass-border);
-  padding: 14px;
-  border-radius: 12px;
-  color: white;
-  width: 100%;
-}
-
-.customization-badge {
-  font-size: 0.75rem;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2px 8px;
-  border-radius: 6px;
-  color: var(--text-muted);
 }
