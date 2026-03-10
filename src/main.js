@@ -142,12 +142,12 @@ window.addEventListener('load', () => {
 
   setTimeout(() => {
     text.innerText = "Bager dejen sprød...";
-  }, 1000);
+  }, 500);
 
   setTimeout(() => {
     text.innerText = "Klar til servering!";
     text.style.color = "var(--primary)";
-  }, 2000);
+  }, 1200);
 
   setTimeout(() => {
     loader.style.opacity = '0';
@@ -158,5 +158,5 @@ window.addEventListener('load', () => {
       const cards = grid.querySelectorAll('.pizza-card');
       cards.forEach(card => card.classList.add('reveal'));
     }, 800);
-  }, 2500);
+  }, 1600);
 });
