@@ -1,78 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pronto Næstved | Premium Pizza Experience</title>
-    <meta name="description" content="Experience the finest pizza in Næstved. Fresh ingredients, traditional recipes, and modern taste. Order now via phone or WhatsApp.">
-  </head>
-  <body>
-    <div id="app">
-      <header class="container">
-        <nav>
-          <a href="/" class="logo">PRONTO<span>NÆSTVED</span></a>
-          <div class="nav-links">
-            <a href="tel:+4500000000" class="btn-secondary">Call Shop</a>
-          </div>
-        </nav>
-      </header>
+<html lang="da">
 
-      <main>
-        <section class="hero container">
-          <div class="glass-panel hero-content" style="padding: 4rem; text-align: center; margin-bottom: 4rem;">
-            <h1 style="font-size: clamp(3rem, 8vw, 5rem); margin-bottom: 1.5rem;">The Art of <span class="gradient-text">Perfect Pizza</span></h1>
-            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem;">
-              Hand-tossed dough, locally sourced ingredients, and a passion for authentic Italian flavors. Delivered straight to your heart.
-            </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-              <a href="#menu" class="btn-primary">View Menu</a>
-              <a href="https://wa.me/4500000000?text=Hi Pronto! I'd like to place an order." class="btn-secondary">Order via WhatsApp</a>
-            </div>
-          </div>
-        </section>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pronto Næstved | Italiensk Gastronomi</title>
+  <meta name="description"
+    content="Oplev den fineste pizza i Næstved. Friske ingredienser, traditionelle opskrifter og moderne smag. Bestil nu via telefon eller WhatsApp.">
+</head>
 
-        <section id="menu" class="container" style="padding-bottom: 8rem;">
-          <h2 style="font-size: 2.5rem; margin-bottom: 3rem; text-align: center;">Our <span class="gradient-text">Signatures</span></h2>
-          <div id="pizza-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <!-- Menu items will be injected here via JS or written directly -->
-            <div class="glass-panel pizza-card">
-              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=500&auto=format&fit=crop" alt="Margherita" class="pizza-image">
-              <h3>Classic Margherita</h3>
-              <p style="color: var(--text-muted); font-size: 0.9rem;">Fresh mozzarella, San Marzano tomatoes, basil, and extra virgin olive oil.</p>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
-                <span style="font-weight: 700; font-size: 1.2rem;">85 DKK</span>
-                <button class="btn-primary" onclick="orderPizza('Margherita')">Add to Order</button>
-              </div>
-            </div>
-
-            <div class="glass-panel pizza-card">
-              <img src="https://images.unsplash.com/photo-1593504049359-74330189a345?q=80&w=500&auto=format&fit=crop" alt="Pepperoni" class="pizza-image">
-              <h3>Diavola Spice</h3>
-              <p style="color: var(--text-muted); font-size: 0.9rem;">Spicy salami, chili flakes, red onions, and our secret hot honey drizzle.</p>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
-                <span style="font-weight: 700; font-size: 1.2rem;">95 DKK</span>
-                <button class="btn-primary" onclick="orderPizza('Diavola Spice')">Add to Order</button>
-              </div>
-            </div>
-
-            <div class="glass-panel pizza-card">
-              <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=500&auto=format&fit=crop" alt="Truffle" class="pizza-image">
-              <h3>White Truffle</h3>
-              <p style="color: var(--text-muted); font-size: 0.9rem;">Truffle cream, wild mushrooms, porchini, and shaved parmesan.</p>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
-                <span style="font-weight: 700; font-size: 1.2rem;">110 DKK</span>
-                <button class="btn-primary" onclick="orderPizza('White Truffle')">Add to Order</button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="container" style="padding: 4rem 0; border-top: 1px solid var(--glass-border); text-align: center;">
-        <p style="color: var(--text-muted);">© 2026 Pronto Næstved. All rights reserved.</p>
-      </footer>
+<body>
+  <!-- Cool Loading Screen -->
+  <div id="loader"
+    style="position: fixed; inset: 0; background: var(--bg); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease-out;">
+    <div style="position: relative; width: 120px; height: 120px; margin-bottom: 2rem;">
+      <svg viewBox="0 0 100 100" style="width: 100%; height: 100%; animation: spin 2s linear infinite;">
+        <circle cx="50" cy="50" r="45" fill="none" stroke="var(--primary)" stroke-width="8" stroke-dasharray="200"
+          stroke-dashoffset="50" stroke-linecap="round"></circle>
+      </svg>
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem;">🍕</div>
     </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <h2 style="font-family: serif; font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: 0.1em;"
+        class="gradient-text">PRONTO NÆSTVED</h2>
+      <p id="loader-text"
+        style="color: var(--text-muted); font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase;">Varmer
+        ovnen op til 400°C...</p>
+    </div>
+  </div>
+
+  <div id="app">
+    <!-- Background Layers -->
+    <div class="bg-glow blob-1"></div>
+    <div class="bg-glow blob-2"></div>
+    <div class="bg-glow blob-3"></div>
+    <div class="bg-grain"></div>
+
+    <header class="container">
+      <nav>
+        <a href="/" class="logo">PRONTO<span>NÆSTVED</span></a>
+        <div class="nav-links">
+          <a href="tel:+4555733532" class="btn-secondary">Ring til Butikken</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container" style="position: relative;">
+        <div class="glass-panel hero-content"
+          style="padding: 4rem; text-align: center; margin-bottom: 4rem; position: relative; z-index: 2;">
+          <h1 style="font-size: clamp(3rem, 8vw, 5rem); margin-bottom: 1.5rem;">Kunsten at lave <span
+              class="gradient-text">den perfekte pizza</span></h1>
+          <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem;">
+            Håndæltet dej, lokale råvarer og en passion for autentiske italienske smagsoplevelser. Leveret direkte til
+            dit hjerte.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="#menu" class="btn-primary" style="padding: 15px 30px; font-size: 1.1rem; border-radius: 12px;">Se
+              Menuen</a>
+            <a href="tel:+4555733532" class="btn-secondary"
+              style="padding: 15px 30px; font-size: 1.1rem; border-radius: 12px;">Ring og Bestil</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="container" style="padding-bottom: 8rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center;">Hvad har du <span
+            class="gradient-text">lyst til i dag?</span></h2>
+
+        <div class="category-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 150px)); gap: 1.5rem; justify-content: center; margin-bottom: 4rem;">
+          <div class="category-card active" onclick="filterMenu('alle')">
+            <div class="category-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌟</div>
+            <span style="font-weight: 700; font-size: 0.95rem; text-transform: uppercase;">Alle</span>
+          </div>
+          <div class="category-card" onclick="filterMenu('pizza')">
+            <div class="category-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">🍕</div>
+            <span style="font-weight: 700; font-size: 0.95rem; text-transform: uppercase;">Pizza</span>
+          </div>
+          <div class="category-card" onclick="filterMenu('pasta')">
+            <div class="category-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">🍝</div>
+            <span style="font-weight: 700; font-size: 0.95rem; text-transform: uppercase;">Pasta</span>
+          </div>
+          <div class="category-card" onclick="filterMenu('sandwich')">
+            <div class="category-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">🥪</div>
+            <span style="font-weight: 700; font-size: 0.95rem; text-transform: uppercase;">Sandwich</span>
+          </div>
+          <div class="category-card" onclick="filterMenu('salat')">
+            <div class="category-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">🥗</div>
+            <span style="font-weight: 700; font-size: 0.95rem; text-transform: uppercase;">Salater</span>
+          </div>
+        </div>
+
+
+        <div id="pizza-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <!-- Menu items will be injected here via JS -->
+        </div>
+      </section>
+
+      <section class="container" style="margin-bottom: 8rem;">
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
+          <div class="reveal">
+            <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Passion for <span
+                class="gradient-text">Autenticitet</span></h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem; max-width: 500px;">
+              Hos Pronto Næstved er hver pizza en fortælling om tradition. Vi bruger kun de fineste råvarer – fra det
+              fineste 00-mel til solmodne italienske tomater – for at sikre, at hver bid sender dig direkte til hjertet
+              af Italien.
+            </p>
+            <div style="display: flex; gap: 3rem;">
+              <div>
+                <h4 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.2rem;">100%</h4>
+                <p
+                  style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted);">
+                  Friske Råvarer</p>
+              </div>
+              <div>
+                <h4 style="font-size: 2.5rem; color: var(--accent); margin-bottom: 0.2rem;">24t</h4>
+                <p
+                  style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted);">
+                  Hævet Dej</p>
+              </div>
+            </div>
+          </div>
+          <div class="glass-panel reveal" style="padding: 1rem; position: relative;">
+            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?q=80&w=800&auto=format&fit=crop"
+              alt="Authentic Pizza Oven"
+              style="width: 100%; border-radius: 20px; display: block; filter: brightness(0.9);">
+          </div>
+        </div>
+      </section>
+
+      <section class="container" style="margin-bottom: 8rem;">
+        <div class="glass-panel"
+          style="padding: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+          <div>
+            <h3 class="gradient-text">Find Os</h3>
+            <p style="margin-top: 1rem;">Farimagsvej 55<br>4700 Næstved</p>
+          </div>
+          <div>
+            <h3 class="gradient-text">Kontakt</h3>
+            <p style="margin-top: 1rem;">Telefon: <a href="tel:+4555733532"
+                style="color: inherit; text-decoration: none;">55 73 35 32</a></p>
+          </div>
+          <div>
+            <h3 class="gradient-text">Åbningstider</h3>
+            <p style="margin-top: 1rem;">Besøg vores butik for at se dagens buffet og specialiteter.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Cart -->
+    <div id="cart-trigger" class="cart-trigger" onclick="toggleCart()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+        <path d="M3 6h18" />
+        <path d="M16 10a4 4 0 0 1-8 0" />
+      </svg>
+      <div id="cart-count" class="cart-count">0</div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal-overlay">
+      <div class="modal-content glass-panel" style="background: rgba(10, 10, 11, 0.95);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+          <h2 style="font-size: 2rem;">Din <span class="gradient-text">Kurv</span></h2>
+          <button class="qty-btn" onclick="toggleCart()"
+            style="width: 40px; height: 40px; font-size: 1.5rem;">×</button>
+        </div>
+
+        <div id="cart-items-list" style="margin-bottom: 2rem;">
+          <!-- Cart items injected here -->
+          <p style="text-align: center; color: var(--text-muted);">Din kurv er tom...</p>
+        </div>
+
+        <div id="checkout-section" style="display: none; margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1rem;">Dine Oplysninger</h3>
+          <div class="checkout-form">
+            <div class="form-group">
+              <label>Navn</label>
+              <input type="text" id="cust-name" class="form-input" placeholder="Dit fulde navn">
+            </div>
+            <div class="form-group">
+              <label>Adresse / Bord nr.</label>
+              <input type="text" id="cust-address" class="form-input" placeholder="Hvor skal vi levere?">
+            </div>
+          </div>
+        </div>
+
+        <div id="cart-summary"
+          style="border-top: 1px solid var(--glass-border); padding-top: 1.5rem; margin-bottom: 2rem;">
+          <div
+            style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 1.2rem; font-weight: 700;">
+            <span>Total:</span>
+            <span id="cart-total-price">0 DKK</span>
+          </div>
+        </div>
+
+        <div style="display: grid; gap: 1rem;">
+          <button id="checkout-btn" class="btn-primary" onclick="showCheckoutFields()"
+            style="justify-content: center;">Gå til Bestilling</button>
+          <div id="final-checkout-btns" style="display: none; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <button class="btn-primary" onclick="checkout('whatsapp')"
+              style="justify-content: center;">WhatsApp</button>
+            <button class="btn-secondary" onclick="checkout('phone')">Opkald</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customization Modal -->
+    <div id="custom-modal" class="modal-overlay">
+      <div class="modal-content glass-panel" style="background: rgba(10, 10, 11, 0.95);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 id="custom-item-name" style="font-size: 1.8rem;">Tilpas</h2>
+          <button class="qty-btn" onclick="closeCustom()"
+            style="width: 40px; height: 40px; font-size: 1.5rem;">×</button>
+        </div>
+        <p id="custom-item-desc" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;"></p>
+
+        <div class="ingredient-list" id="ingredient-list">
+          <!-- Ingredients injected here -->
+        </div>
+
+        <button class="btn-primary" onclick="confirmCustom()" style="width: 100%; justify-content: center;">Bekræft &
+          Tilføj</button>
+      </div>
+    </div>
+
+    <footer class="container" style="padding: 4rem 0; border-top: 1px solid var(--glass-border); text-align: center;">
+      <p style="color: var(--text-muted);">© 2026 Pronto Næstved. Alle rettigheder forbeholdes.</p>
+    </footer>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
