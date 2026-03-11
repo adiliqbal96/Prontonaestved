@@ -71,6 +71,16 @@
         <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center;">Hvad har du <span
             class="gradient-text">lyst til i dag?</span></h2>
 
+        <!-- Search Bar -->
+        <div class="search-container">
+          <div class="search-wrapper glass-panel">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="menu-search" placeholder="Søg efter nummer, navn eller ingrediens..."
+              oninput="handleSearch(this.value)">
+            <button class="clear-search hide" onclick="clearSearch()">×</button>
+          </div>
+        </div>
+
         <div class="category-grid"
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 150px)); gap: 1.5rem; justify-content: center; margin-bottom: 4rem;">
           <div class="category-card active" onclick="filterMenu('alle')">
@@ -136,6 +146,15 @@
         </div>
       </section>
 
+      <section id="reviews" class="reviews-section">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center;">Hvad vores <span
+            class="gradient-text">kunder siger</span></h2>
+
+        <div class="review-track" id="review-track">
+          <!-- Reviews injected here -->
+        </div>
+      </section>
+
       <section class="container" style="margin-bottom: 8rem;">
         <div class="glass-panel"
           style="padding: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
@@ -181,6 +200,15 @@
         <button class="btn-primary" onclick="confirmCustom()" style="width: 100%; justify-content: center;">Bekræft &
           Tilføj</button>
       </div>
+    </div>
+
+    <!-- Floating Order Note Bar -->
+    <div id="order-bar" class="order-bar glass-panel hide">
+      <div class="order-info">
+        <span class="order-count">0 valgt</span>
+        <p id="order-note">Vælg pizzaer fra menuen...</p>
+      </div>
+      <a href="tel:+4555733532" class="btn-primary" id="call-order-btn">Ring & Bestil</a>
     </div>
 
     <footer class="container" style="padding: 4rem 0; border-top: 1px solid var(--glass-border); text-align: center;">
