@@ -64,7 +64,7 @@ const reviewsData = [
 ]
 
 
-const EXTRA_INGREDIENTS = ["Ekstra Ost", "Hvidløg", "Chili", "Bacon", "Løg", "Svampe"]
+// Cart Logic
 let selectedItems = {} // Format: { id: quantity }
 
 const updateQuantity = (id, delta) => {
@@ -96,6 +96,8 @@ const updateOrderBar = () => {
   const countElement = document.querySelector('.order-count')
   const note = document.getElementById('order-note')
 
+  if (!bar || !countElement || !note) return;
+
   const selectedIds = Object.keys(selectedItems)
   const totalItems = Object.values(selectedItems).reduce((sum, q) => sum + q, 0)
 
@@ -124,6 +126,7 @@ const updateOrderBar = () => {
     bar.classList.add('hide')
   }
 }
+
 const renderMenuItem = (item, index) => {
   let displayName = item.name;
   let badgeHtml = '';
@@ -163,8 +166,8 @@ const renderMenuItem = (item, index) => {
       </div>
       <div class="price-row" style="margin-top: 1.5rem; padding-top: 1.5rem;">
         <span style="font-weight: 800; font-size: 1.4rem; color: white;">${item.price} <span style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">DKK</span></span>
-        <button onclick="toggleItemSelection(${item.id})" class="btn-primary ${isSelected ? 'active' : ''}" style="padding: 12px 24px; font-size: 0.95rem; border-radius: 12px;">
-          ${isSelected ? 'Fjern' : 'Vælg'}
+        <button onclick="updateQuantity(${item.id}, 1)" class="btn-primary ${isSelected ? 'active' : ''}" style="padding: 12px 24px; font-size: 0.95rem; border-radius: 12px;">
+          ${isSelected ? 'Tilføj én til' : 'Vælg'}
         </button>
       </div>
     </div>
@@ -200,7 +203,7 @@ const renderMenu = () => {
     return
   }
 
-  // Handle Featured Favorites Slider (Only when showing 'alle' or 'pizza' and NO active search)
+  // Handle Featured Favorites Slider
   let featuredHtml = '';
   if ((currentCategory === 'alle' || currentCategory === 'pizza') && searchQuery === '') {
     const featuredList = menuData.filter(item => [1, 10, 12, 18, 26].includes(item.id));
