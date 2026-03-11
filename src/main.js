@@ -137,7 +137,9 @@ const updateOrderBar = () => {
   }
 
   // Update Cart if open
-  if (!document.getElementById('cart-drawer').classList.contains('hide')) {
+  const isCartOpen = !document.getElementById('cart-drawer').classList.contains('hide')
+  if (isCartOpen) {
+    bar.classList.add('hide') // Hide mini bar when drawer is open
     renderCart()
   }
 }
@@ -155,6 +157,8 @@ const renderCart = () => {
   }
 
   let total = 0
+  const orderList = []
+
   container.innerHTML = selectedIds.map(id => {
     const item = menuData.find(m => m.id === parseInt(id))
     if (!item) return ''
@@ -163,7 +167,9 @@ const renderCart = () => {
 
     const match = item.name.match(/^(\d+)\.\s*(.*)/)
     const displayName = match ? match[2] : item.name
-    const nr = match ? `Nr. ${match[1]}` : 'Special'
+    const nr = match ? `nr. ${match[1]}` : item.name
+
+    orderList.push(qty > 1 ? `${qty}x ${nr}` : nr)
 
     return `
       <div class="cart-item">
@@ -181,16 +187,27 @@ const renderCart = () => {
     `
   }).join('')
 
+  // Add Call Script Section
+  const scriptHtml = `
+    <div class="call-script-box glass-panel" style="margin-top: 2rem; padding: 1.5rem; border: 1px dashed var(--it-green); background: rgba(0, 140, 69, 0.05);">
+      <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--it-green); margin-bottom: 0.6rem; font-weight: 800; letter-spacing: 0.05em;">Sig dette i telefonen:</p>
+      <p style="font-size: 1.05rem; line-height: 1.4; color: white; font-family: var(--font-main);">"Hej, jeg vil gerne bestille <strong>${orderList.join(', ')}</strong>"</p>
+    </div>
+  `
+  container.innerHTML += scriptHtml
+
   totalElement.innerText = `${total} kr.`
 }
 
 const openCart = () => {
   document.getElementById('cart-drawer').classList.remove('hide')
+  document.getElementById('order-bar').classList.add('hide')
   renderCart()
 }
 
 const closeCart = () => {
   document.getElementById('cart-drawer').classList.add('hide')
+  updateOrderBar() // Show mini bar again if items exist
 }
 
 const renderMenuItem = (item, index) => {
