@@ -323,25 +323,60 @@ const renderMenu = () => {
     `;
   }
 
-  // Grouped Rendering for Pizza
-  if (currentCategory === 'pizza' && searchQuery === '') {
-    const groups = ['Klassikere', 'Gourmet', 'Specialiteter'];
-    grid.innerHTML = featuredHtml + groups.map(group => {
-      const groupItems = filteredItems.filter(item => item.subCategory === group);
-      if (groupItems.length === 0) return '';
-      return `
-        <div class="menu-group-header reveal">
-          <h3>${group}</h3>
-          <div class="header-line"></div>
-        </div>
-        <div class="menu-slider">
-          ${groupItems.map((item, index) => renderMenuItem(item, index)).join('')}
-        </div>
-      `;
-    }).join('');
+  // Helper function to render a category group
+  const renderCategoryGroup = (label, items) => {
+    if (items.length === 0) return '';
+    return `
+      <div class="menu-group-header reveal">
+        <h3>${label}</h3>
+        <div class="header-line"></div>
+      </div>
+      <div class="menu-slider">
+        ${items.map((item, index) => renderMenuItem(item, index)).join('')}
+      </div>
+    `;
+  };
+
+  const categories = [
+    { id: 'pizza', label: 'Pizzaer' },
+    { id: 'pasta', label: 'Pasta' },
+    { id: 'sandwich', label: 'Sandwich' },
+    { id: 'salat', label: 'Salater' }
+  ];
+
+  let menuHtml = '';
+
+  if (searchQuery === '') {
+    if (currentCategory === 'alle') {
+      categories.forEach(cat => {
+        const catItems = filteredItems.filter(item => item.category === cat.id);
+        if (cat.id === 'pizza') {
+          const groups = ['Klassikere', 'Gourmet', 'Specialiteter'];
+          groups.forEach(group => {
+            const groupItems = catItems.filter(item => item.subCategory === group);
+            menuHtml += renderCategoryGroup(group, groupItems);
+          });
+        } else {
+          menuHtml += renderCategoryGroup(cat.label, catItems);
+        }
+      });
+    } else if (currentCategory === 'pizza') {
+      const groups = ['Klassikere', 'Gourmet', 'Specialiteter'];
+      groups.forEach(group => {
+        const groupItems = filteredItems.filter(item => item.subCategory === group);
+        menuHtml += renderCategoryGroup(group, groupItems);
+      });
+    } else {
+      const catLabel = categories.find(c => c.id === currentCategory)?.label || currentCategory;
+      menuHtml += renderCategoryGroup(catLabel, filteredItems);
+    }
   } else {
-    grid.innerHTML = featuredHtml + `<div class="menu-slider">${filteredItems.map((item, index) => renderMenuItem(item, index)).join('')}</div>`;
+    // Search active: Show all results in one slider or grouped? 
+    // Let's keep one slider for search results but with a "Søgeresultater" header
+    menuHtml = renderCategoryGroup('Søgeresultater', filteredItems);
   }
+
+  grid.innerHTML = featuredHtml + menuHtml;
 
   // Add reveal observer
   const cards = grid.querySelectorAll('.pizza-card, .featured-card, .menu-group-header')
