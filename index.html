@@ -211,13 +211,36 @@
       </div>
     </div>
 
-    <!-- Floating Order Note Bar -->
-    <div id="order-bar" class="order-bar glass-panel hide">
+    <!-- Shopping Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer hide">
+      <div class="cart-overlay" onclick="closeCart()"></div>
+      <div class="cart-content glass-panel">
+        <div class="cart-header">
+          <h2>Din <span>Bestilling</span></h2>
+          <button class="close-cart" onclick="closeCart()">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+          <!-- Items injected here -->
+        </div>
+        <div class="cart-footer">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-amount">0 kr.</span>
+          </div>
+          <a href="tel:+4555733532" class="btn-primary checkout-btn">Ring & Bestil Nu</a>
+          <p class="cart-hint">Ordren gennemføres via opkald</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Order Bar (Mini Cart) -->
+    <div id="order-bar" class="order-bar glass-panel hide" onclick="openCart()">
       <div class="order-info">
         <span class="order-count">0 valgt</span>
-        <p id="order-note">Vælg pizzaer fra menuen...</p>
+        <p id="mini-total">Total: 0 kr.</p>
+        <p id="order-note">Tryk for at se din kurv...</p>
       </div>
-      <a href="tel:+4555733532" class="btn-primary" id="call-order-btn">Ring & Bestil</a>
+      <button class="btn-primary" style="pointer-events: none;">Vis Kurv</button>
     </div>
 
     <footer class="container" style="padding: 4rem 0; border-top: 1px solid var(--glass-border); text-align: center;">

@@ -971,20 +971,21 @@ a {
     justify-content: center;
   }
 
-  /* Fixed Bottom Order Bar */
+  /* Fixed Bottom Order Bar (Mini Cart) */
   .order-bar {
-    width: calc(100% - 2rem);
-    bottom: 1rem;
-    left: 1rem;
+    width: calc(100% - 1.5rem);
+    bottom: 0.75rem;
+    left: 0.75rem;
     transform: none;
     border-radius: 20px;
-    padding: 1.2rem;
+    padding: 1rem 1.2rem;
     flex-direction: row;
     gap: 1rem;
-    background: rgba(20, 20, 22, 0.98);
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(20, 20, 22, 0.95);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
   }
 
   .order-bar.hide {

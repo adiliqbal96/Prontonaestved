@@ -96,16 +96,24 @@ const toggleItemSelection = (id) => {
 const updateOrderBar = () => {
   const bar = document.getElementById('order-bar')
   const countElement = document.querySelector('.order-count')
+  const miniTotal = document.getElementById('mini-total')
   const note = document.getElementById('order-note')
 
-  if (!bar || !countElement || !note) return;
+  if (!bar || !countElement || !note || !miniTotal) return;
 
   const selectedIds = Object.keys(selectedItems)
   const totalItems = Object.values(selectedItems).reduce((sum, q) => sum + q, 0)
 
+  // Calculate Total Price
+  const totalPrice = selectedIds.reduce((sum, id) => {
+    const item = menuData.find(m => m.id === parseInt(id))
+    return sum + (item ? item.price * selectedItems[id] : 0)
+  }, 0)
+
   if (totalItems > 0) {
     bar.classList.remove('hide')
     countElement.innerText = `${totalItems} valgt`
+    miniTotal.innerText = `Total: ${totalPrice} kr.`
 
     const formattedLines = selectedIds
       .map(id => {
@@ -120,13 +128,69 @@ const updateOrderBar = () => {
       .sort()
 
     if (formattedLines.length > 0) {
-      note.innerHTML = `Jeg vil gerne bestille <strong>${formattedLines.join(', ')}</strong>`
+      note.innerHTML = `<strong>${formattedLines.join(', ')}</strong>`
     } else {
-      note.innerText = "Klar til at bestille fra din liste!"
+      note.innerText = "Tryk for at se din kurv..."
     }
   } else {
     bar.classList.add('hide')
   }
+
+  // Update Cart if open
+  if (!document.getElementById('cart-drawer').classList.contains('hide')) {
+    renderCart()
+  }
+}
+
+const renderCart = () => {
+  const container = document.getElementById('cart-items')
+  const totalElement = document.getElementById('cart-total-amount')
+  if (!container || !totalElement) return;
+
+  const selectedIds = Object.keys(selectedItems)
+  if (selectedIds.length === 0) {
+    container.innerHTML = '<p style="text-align: center; margin-top: 3rem; color: var(--text-muted);">Din kurv er tom...</p>'
+    totalElement.innerText = '0 kr.'
+    return
+  }
+
+  let total = 0
+  container.innerHTML = selectedIds.map(id => {
+    const item = menuData.find(m => m.id === parseInt(id))
+    if (!item) return ''
+    const qty = selectedItems[id]
+    total += item.price * qty
+
+    const match = item.name.match(/^(\d+)\.\s*(.*)/)
+    const displayName = match ? match[2] : item.name
+    const nr = match ? `Nr. ${match[1]}` : 'Special'
+
+    return `
+      <div class="cart-item">
+        <div class="cart-item-info">
+          <h4>${displayName}</h4>
+          <p>${nr} · ${item.price} kr. pr stk.</p>
+          <span class="cart-item-price">${item.price * qty} kr.</span>
+        </div>
+        <div class="quantity-controls">
+          <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
+          <span class="qty-num">${qty}</span>
+          <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+        </div>
+      </div>
+    `
+  }).join('')
+
+  totalElement.innerText = `${total} kr.`
+}
+
+const openCart = () => {
+  document.getElementById('cart-drawer').classList.remove('hide')
+  renderCart()
+}
+
+const closeCart = () => {
+  document.getElementById('cart-drawer').classList.add('hide')
 }
 
 const renderMenuItem = (item, index) => {
@@ -274,6 +338,8 @@ const renderMenu = () => {
 
 window.toggleItemSelection = toggleItemSelection;
 window.updateQuantity = updateQuantity;
+window.openCart = openCart;
+window.closeCart = closeCart;
 window.handleSearch = (val) => {
   searchQuery = val;
   const clearBtn = document.querySelector('.clear-search');
