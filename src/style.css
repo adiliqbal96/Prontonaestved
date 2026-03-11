@@ -306,54 +306,9 @@ h4 {
 
 
 
-/* Floating Elements */
+/* Floating Elements - Hidden as they are redundant with Order Bar */
 .call-trigger {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 64px;
-  height: 64px;
-  background: var(--primary);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 30px rgba(255, 87, 34, 0.4);
-  cursor: pointer;
-  z-index: 1000;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-  text-decoration: none;
-}
-
-.call-trigger:hover {
-  transform: translateY(-5px) scale(1.05);
-  background: var(--primary-light);
-  box-shadow: 0 15px 40px rgba(255, 87, 34, 0.6);
-}
-
-.call-trigger::before {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border-radius: 50%;
-  background: var(--primary);
-  opacity: 0.4;
-  z-index: -1;
-  animation: pulse-ring 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.5;
-  }
-
-  80%,
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
+  display: none;
 }
 
 @keyframes wobble {
@@ -682,12 +637,28 @@ a {
     border-bottom: 1px solid var(--glass-border);
   }
 
-  .logo h1 {
-    font-size: 1.5rem;
+  /* Hero Optimization */
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .hero-content {
+    padding: 2rem 1.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 10vw, 2.8rem) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hero p {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .search-container {
-    margin: 1rem auto 2rem;
+    margin: 0 auto 2rem;
     padding: 0 1rem;
   }
 
@@ -832,6 +803,50 @@ a {
   .pizza-card:active {
     transform: scale(0.95);
   }
+
+  /* Back to Top Mobile Fix */
+  .back-to-top {
+    bottom: 6rem;
+    /* Above order bar */
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Back to Top Button Base */
+.back-to-top {
+  position: fixed;
+  bottom: 8rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: rgba(13, 13, 14, 0.8);
+  backdrop-filter: blur(20px);
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top:hover {
+  background: var(--it-green);
+  border-color: var(--it-green);
+  transform: translateY(-5px);
+}
+
+.back-to-top.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
 }
 
 .review-text {
