@@ -34,6 +34,44 @@ body {
   background-image: radial-gradient(circle at 50% -20%, rgba(255, 87, 34, 0.15), transparent 70%);
 }
 
+/* Announcement Banner */
+.announcement-banner {
+  background: linear-gradient(90deg, var(--it-green), var(--it-red));
+  color: white;
+  padding: 6px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1001;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.banner-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: banner-scroll 40s linear infinite;
+  padding-left: 50%;
+}
+
+.banner-content span {
+  display: inline-block;
+  margin-right: 3rem;
+}
+
+@keyframes banner-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 #app {
   width: 100%;
   max-width: 1400px;
