@@ -289,7 +289,7 @@ const renderMenu = () => {
   // Handle Featured Favorites Slider
   let featuredHtml = '';
   if ((currentCategory === 'alle' || currentCategory === 'pizza') && searchQuery === '') {
-    const featuredList = menuData.filter(item => [1, 10, 12, 18, 26].includes(item.id));
+    const featuredList = menuData.filter(item => [7, 10, 17, 24, 27, 28, 35].includes(item.id));
     featuredHtml = `
       <div class="featured-section reveal" style="grid-column: 1 / -1; margin-bottom: 3rem;">
         <h3 class="section-divider">Butikkens <span>Favoritter</span></h3>
