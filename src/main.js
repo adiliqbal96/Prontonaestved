@@ -334,11 +334,13 @@ const renderMenu = () => {
           <h3>${group}</h3>
           <div class="header-line"></div>
         </div>
-        ${groupItems.map((item, index) => renderMenuItem(item, index)).join('')}
+        <div class="menu-slider">
+          ${groupItems.map((item, index) => renderMenuItem(item, index)).join('')}
+        </div>
       `;
     }).join('');
   } else {
-    grid.innerHTML = featuredHtml + filteredItems.map((item, index) => renderMenuItem(item, index)).join('');
+    grid.innerHTML = featuredHtml + `<div class="menu-slider">${filteredItems.map((item, index) => renderMenuItem(item, index)).join('')}</div>`;
   }
 
   // Add reveal observer
