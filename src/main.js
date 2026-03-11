@@ -23,16 +23,16 @@ const menuData = [
   { id: 17, name: "17. Tomat · Ost · Kødsauce · Løg", price: 90, category: "pizza", subCategory: "Klassikere", ingredients: ["Tomat", "Ost", "Kødsauce", "Løg"], image: "images/pizza_17.png" },
   { id: 18, name: "18. Tomat · Ost · Gorgonzola · Parmaskinke", price: 98, category: "pizza", subCategory: "Gourmet", ingredients: ["Tomat", "Ost", "Gorgonzola", "Parmaskinke"], image: "images/pizza_18.png" },
   { id: 19, name: "19. Tomat · Ost · Champignon · Parmaskinke", price: 98, category: "pizza", subCategory: "Gourmet", ingredients: ["Tomat", "Ost", "Champignon", "Parmaskinke"], image: "images/pizza_19.png" },
-  { id: 20, name: "20. Tomat · Ost · Kylling · Gorgonzola · Artiskok", price: 98, category: "pizza", ingredients: ["Tomat", "Ost", "Kylling", "Gorgonzola", "Artiskok"], image: "images/pizza_20.png" },
-  { id: 21, name: "21. Tomat · Ost · Champignon · Salami", price: 98, category: "pizza", ingredients: ["Tomat", "Ost", "Champignon", "Salami"], image: "images/pizza_21.png" },
-  { id: 22, name: "22. Tomat · Ost · Bresaola · Gorgonzola · Rucola", price: 103, category: "pizza", ingredients: ["Tomat", "Ost", "Bresaola", "Gorgonzola", "Rucola"], image: "images/pizza_22.png" },
-  { id: 23, name: "23. Tomat · Ost · Gedeost · Kalkun · Spinat", price: 98, category: "pizza", ingredients: ["Tomat", "Ost", "Gedeost", "Kalkun", "Spinat"], image: "images/pizza_23.png" },
-  { id: 24, name: "24. Tomat · Ost · Bresaola · Rucola · Parmesan", price: 103, category: "pizza", ingredients: ["Tomat", "Ost", "Bresaola", "Rucola", "Parmesan"], image: "images/pizza_24.png" },
-  { id: 25, name: "25. Tomat · Ost · Rucola · Semidried Tomater", price: 90, category: "pizza", ingredients: ["Tomat", "Ost", "Rucola", "Semidried Tomater"], image: "images/pizza_25.png" },
-  { id: 26, name: "26. Tomat · Ost · Skiver af frisk tomat · Basilikum · Kæmperejer", price: 98, category: "pizza", ingredients: ["Tomat", "Ost", "Tomat skiver", "Basilikum", "Kæmperejer"], image: "images/pizza_26.png" },
-  { id: 27, name: "27. Ost · Kartofler · Rosmarin · Olivenolie", price: 85, category: "pizza", ingredients: ["Ost", "Kartofler", "Rosmarin", "Olivenolie"], image: "https://images.unsplash.com/photo-1588315029754-2dd089d36a11?q=80&w=600&auto=format&fit=crop" },
-  { id: 28, name: "28. Trøffel · Mascarpone · Bøffelmælksmozzarella...", price: 103, category: "pizza", ingredients: ["Trøffel", "Mascarpone", "Bøffelmælksmozzarella", "Årstidens svampe", "Rucola", "Parmesan"], image: "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=600&auto=format&fit=crop" },
-  { id: 29, name: "29. Tomat · Ost · Peberfrugt · Artiskok · Løg...", price: 98, category: "pizza", ingredients: ["Tomat", "Ost", "Peberfrugt", "Artiskok", "Løg", "Champignon", "Soltørrede tomater"], image: "https://images.unsplash.com/photo-1544982503-9f984c14501a?q=80&w=600&auto=format&fit=crop" },
+  { id: 20, name: "20. Tomat · Ost · Kylling · Gorgonzola · Artiskok", price: 98, category: "pizza", subCategory: "Specialiteter", ingredients: ["Tomat", "Ost", "Kylling", "Gorgonzola", "Artiskok"], image: "images/pizza_20.png" },
+  { id: 21, name: "21. Tomat · Ost · Champignon · Salami", price: 98, category: "pizza", subCategory: "Klassikere", ingredients: ["Tomat", "Ost", "Champignon", "Salami"], image: "images/pizza_21.png" },
+  { id: 22, name: "22. Tomat · Ost · Bresaola · Gorgonzola · Rucola", price: 103, category: "pizza", subCategory: "Gourmet", ingredients: ["Tomat", "Ost", "Bresaola", "Gorgonzola", "Rucola"], image: "images/pizza_22.png" },
+  { id: 23, name: "23. Tomat · Ost · Gedeost · Kalkun · Spinat", price: 98, category: "pizza", subCategory: "Specialiteter", ingredients: ["Tomat", "Ost", "Gedeost", "Kalkun", "Spinat"], image: "images/pizza_23.png" },
+  { id: 24, name: "24. Tomat · Ost · Bresaola · Rucola · Parmesan", price: 103, category: "pizza", subCategory: "Gourmet", ingredients: ["Tomat", "Ost", "Bresaola", "Rucola", "Parmesan"], image: "images/pizza_24.png" },
+  { id: 25, name: "25. Tomat · Ost · Rucola · Semidried Tomater", price: 90, category: "pizza", subCategory: "Gourmet", ingredients: ["Tomat", "Ost", "Rucola", "Semidried Tomater"], image: "images/pizza_25.png" },
+  { id: 26, name: "26. Tomat · Ost · Basilikum · Kæmperejer", price: 98, category: "pizza", subCategory: "Gourmet", ingredients: ["Tomat", "Ost", "Tomat skiver", "Basilikum", "Kæmperejer"], image: "images/pizza_26.png" },
+  { id: 27, name: "27. Ost · Kartofler · Rosmarin · Olivenolie", price: 85, category: "pizza", subCategory: "Gourmet", ingredients: ["Ost", "Kartofler", "Rosmarin", "Olivenolie"], image: "https://images.unsplash.com/photo-1588315029754-2dd089d36a11?q=80&w=600&auto=format&fit=crop" },
+  { id: 28, name: "28. Trøffel · Mascarpone · Mozzarella...", price: 103, category: "pizza", subCategory: "Gourmet", ingredients: ["Trøffel", "Mascarpone", "Mozzarella", "Årstidens svampe", "Rucola", "Parmesan"], image: "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=600&auto=format&fit=crop" },
+  { id: 29, name: "29. Tomat · Ost · Peberfrugt · Løg...", price: 98, category: "pizza", subCategory: "Klassikere", ingredients: ["Tomat", "Ost", "Peberfrugt", "Artiskok", "Løg", "Champignon", "Soltørrede tomater"], image: "https://images.unsplash.com/photo-1544982503-9f984c14501a?q=80&w=600&auto=format&fit=crop" },
 
   // PASTA
   { id: 30, name: "30. Lasagne", price: 80, category: "pasta", ingredients: ["Lasagne"], image: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?q=80&w=600&auto=format&fit=crop" },
@@ -65,39 +65,58 @@ const reviewsData = [
 
 
 const EXTRA_INGREDIENTS = ["Ekstra Ost", "Hvidløg", "Chili", "Bacon", "Løg", "Svampe"]
-let selectedItems = []
-let searchQuery = ''
-let currentCategory = 'alle'
+let selectedItems = {} // Format: { id: quantity }
+
+const updateQuantity = (id, delta) => {
+  const currentQty = selectedItems[id] || 0
+  const newQty = Math.max(0, currentQty + delta)
+
+  if (newQty === 0) {
+    delete selectedItems[id]
+  } else {
+    selectedItems[id] = newQty
+  }
+
+  renderMenu()
+  updateOrderBar()
+}
 
 const toggleItemSelection = (id) => {
-  const index = selectedItems.indexOf(id)
-  if (index > -1) {
-    selectedItems.splice(index, 1)
+  if (selectedItems[id]) {
+    delete selectedItems[id]
   } else {
-    selectedItems.push(id)
+    selectedItems[id] = 1
   }
-  renderMenu(window.currentFilter || 'alle')
+  renderMenu()
   updateOrderBar()
 }
 
 const updateOrderBar = () => {
   const bar = document.getElementById('order-bar')
-  const count = document.querySelector('.order-count')
+  const countElement = document.querySelector('.order-count')
   const note = document.getElementById('order-note')
 
-  if (selectedItems.length > 0) {
+  const selectedIds = Object.keys(selectedItems)
+  const totalItems = Object.values(selectedItems).reduce((sum, q) => sum + q, 0)
+
+  if (totalItems > 0) {
     bar.classList.remove('hide')
-    count.innerText = `${selectedItems.length} valgt`
+    countElement.innerText = `${totalItems} valgt`
 
-    // Sort and format numbers
-    const numbers = selectedItems
-      .map(id => menuData.find(m => m.id === id))
-      .filter(m => m && m.name.match(/^\d+/))
-      .map(m => m.name.match(/^(\d+)/)[1])
-      .sort((a, b) => a - b)
+    const formattedLines = selectedIds
+      .map(id => {
+        const item = menuData.find(m => m.id === parseInt(id))
+        const qty = selectedItems[id]
+        if (!item) return null
+        const match = item.name.match(/^(\d+)/)
+        const nr = match ? `nr. ${match[1]}` : item.name
+        return qty > 1 ? `${qty}x ${nr}` : nr
+      })
+      .filter(Boolean)
+      .sort()
 
-    if (numbers.length > 0) {
-      note.innerHTML = `Jeg vil gerne bestille nr. <strong>${numbers.join(', ')}</strong>`
+    if (formattedLines.length > 0) {
+      note.innerHTML = `Jeg vil gerne bestille <strong>${formattedLines.join(', ')}</strong>`
     } else {
       note.innerText = "Klar til at bestille fra din liste!"
     }
@@ -105,9 +124,57 @@ const updateOrderBar = () => {
     bar.classList.add('hide')
   }
 }
+const renderMenuItem = (item, index) => {
+  let displayName = item.name;
+  let badgeHtml = '';
+  const match = item.name.match(/^(\d+)\.\s*(.*)/);
+  if (match) {
+    badgeHtml = `<span style="background: rgba(255,87,34,0.15); color: var(--primary); padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 800; border: 1px solid rgba(255,87,34,0.3); letter-spacing: 0.05em;">Nr. ${match[1]}</span>`;
+    displayName = match[2];
+  } else {
+    badgeHtml = `<span style="background: rgba(255,255,255,0.05); color: var(--text-muted); padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; border: 1px solid var(--glass-border); text-transform: uppercase;">${item.category}</span>`;
+  }
+
+  const qty = selectedItems[item.id] || 0;
+  const isSelected = qty > 0;
+
+  return `
+    <div class="glass-panel pizza-card ${isSelected ? 'selected' : ''}" style="${window.innerWidth > 768 ? `animation-delay: ${index * 0.05}s` : ''}">
+      <div class="image-container">
+        <img src="${item.image}" alt="${displayName}" class="pizza-image" onerror="this.src='https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600&auto=format&fit=crop'">
+        ${isSelected ? `
+          <div class="quantity-controls">
+            <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
+            <span class="qty-num">${qty}</span>
+            <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+          </div>
+        ` : `
+          <button class="select-btn" onclick="updateQuantity(${item.id}, 1)">
+            + Tilføj
+          </button>
+        `}
+      </div>
+      <div class="pizza-info">
+        <div style="margin-bottom: 0.8rem;">${badgeHtml}</div>
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.4rem;">${displayName}</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.85rem;">
+          ${item.ingredients.join(', ')}
+        </p>
+      </div>
+      <div class="price-row" style="margin-top: 1.5rem; padding-top: 1.5rem;">
+        <span style="font-weight: 800; font-size: 1.4rem; color: white;">${item.price} <span style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">DKK</span></span>
+        <button onclick="toggleItemSelection(${item.id})" class="btn-primary ${isSelected ? 'active' : ''}" style="padding: 12px 24px; font-size: 0.95rem; border-radius: 12px;">
+          ${isSelected ? 'Fjern' : 'Vælg'}
+        </button>
+      </div>
+    </div>
+  `;
+}
+
 // Menu Rendering
 const renderMenu = () => {
   const grid = document.querySelector('#pizza-grid')
+  if (!grid) return;
 
   // Apply filters
   let filteredItems = currentCategory === 'alle' ? menuData : menuData.filter(item => item.category === currentCategory)
@@ -115,7 +182,6 @@ const renderMenu = () => {
   if (searchQuery) {
     const query = searchQuery.toLowerCase().trim()
     filteredItems = filteredItems.filter(item => {
-      // Search in ID (number), Name, and Ingredients
       const numMatch = item.id.toString() === query || item.name.toLowerCase().startsWith(query)
       return numMatch ||
         item.name.toLowerCase().includes(query) ||
@@ -134,45 +200,63 @@ const renderMenu = () => {
     return
   }
 
-  grid.innerHTML = filteredItems.map((item, index) => {
-    let displayName = item.name;
-    let badgeHtml = '';
-    const match = item.name.match(/^(\d+)\.\s*(.*)/);
-    if (match) {
-      badgeHtml = `<span style="background: rgba(255,87,34,0.15); color: var(--primary); padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 800; border: 1px solid rgba(255,87,34,0.3); letter-spacing: 0.05em;">Nr. ${match[1]}</span>`;
-      displayName = match[2];
-    } else {
-      badgeHtml = `<span style="background: rgba(255,255,255,0.05); color: var(--text-muted); padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; border: 1px solid var(--glass-border); text-transform: uppercase;">${item.category}</span>`;
-    }
-
-    const isSelected = selectedItems.includes(item.id);
-
-    return `
-    <div class="glass-panel pizza-card ${isSelected ? 'selected' : ''}" style="${window.innerWidth > 768 ? `animation-delay: ${index * 0.05}s` : ''}">
-      <div class="image-container">
-        <img src="${item.image}" alt="${displayName}" class="pizza-image" onerror="this.src='https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600&auto=format&fit=crop'">
-        <button class="select-btn" onclick="toggleItemSelection(${item.id})">
-          ${isSelected ? '✓ Valgt' : '+ Tilføj'}
-        </button>
+  // Handle Featured Favorites Slider (Only when showing 'alle' or 'pizza' and NO active search)
+  let featuredHtml = '';
+  if ((currentCategory === 'alle' || currentCategory === 'pizza') && searchQuery === '') {
+    const featuredList = menuData.filter(item => [1, 10, 12, 18, 26].includes(item.id));
+    featuredHtml = `
+      <div class="featured-section reveal" style="grid-column: 1 / -1; margin-bottom: 3rem;">
+        <h3 class="section-divider">Butikkens <span>Favoritter</span></h3>
+        <div class="featured-slider">
+          ${featuredList.map(item => {
+      const qty = selectedItems[item.id] || 0;
+      return `
+              <div class="featured-card glass-panel ${qty > 0 ? 'selected' : ''}">
+                <div class="featured-image-container">
+                  <img src="${item.image}" alt="${item.name}">
+                  <div class="featured-badge">TOPVALG</div>
+                  ${qty > 0 ? `
+                    <div class="quantity-controls overlay">
+                      <button class="qty-btn" onclick="event.stopPropagation(); updateQuantity(${item.id}, -1)">−</button>
+                      <span class="qty-num">${qty}</span>
+                      <button class="qty-btn" onclick="event.stopPropagation(); updateQuantity(${item.id}, 1)">+</button>
+                    </div>
+                  ` : `
+                    <button class="select-btn" onclick="updateQuantity(${item.id}, 1)">+ Tilføj</button>
+                  `}
+                </div>
+                <div class="featured-info">
+                  <h4>${item.name}</h4>
+                  <p>${item.ingredients.join(', ')}</p>
+                  <span class="featured-price">${item.price} kr.</span>
+                </div>
+              </div>
+            `}).join('')}
+        </div>
       </div>
-      <div class="pizza-info">
-        <div style="margin-bottom: 0.8rem;">${badgeHtml}</div>
-        <h3 style="margin-bottom: 0.5rem; font-size: 1.4rem;">${displayName}</h3>
-        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.85rem;">
-          ${item.ingredients.join(', ')}
-        </p>
-      </div>
-      <div class="price-row" style="margin-top: 1.5rem; padding-top: 1.5rem;">
-        <span style="font-weight: 800; font-size: 1.4rem; color: white;">${item.price} <span style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">DKK</span></span>
-        <button onclick="toggleItemSelection(${item.id})" class="btn-primary ${isSelected ? 'active' : ''}" style="padding: 12px 24px; font-size: 0.95rem; border-radius: 12px;">
-          ${isSelected ? 'Fjern' : 'Vælg'}
-        </button>
-      </div>
-    </div>
-  `}).join('')
+    `;
+  }
 
-  // Add reveal class after a small delay for staggered effect
-  const cards = grid.querySelectorAll('.pizza-card')
+  // Grouped Rendering for Pizza
+  if (currentCategory === 'pizza' && searchQuery === '') {
+    const groups = ['Klassikere', 'Gourmet', 'Specialiteter'];
+    grid.innerHTML = featuredHtml + groups.map(group => {
+      const groupItems = filteredItems.filter(item => item.subCategory === group);
+      if (groupItems.length === 0) return '';
+      return `
+        <div class="menu-group-header reveal">
+          <h3>${group}</h3>
+          <div class="header-line"></div>
+        </div>
+        ${groupItems.map((item, index) => renderMenuItem(item, index)).join('')}
+      `;
+    }).join('');
+  } else {
+    grid.innerHTML = featuredHtml + filteredItems.map((item, index) => renderMenuItem(item, index)).join('');
+  }
+
+  // Add reveal observer
+  const cards = grid.querySelectorAll('.pizza-card, .featured-card, .menu-group-header')
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -180,7 +264,6 @@ const renderMenu = () => {
       }
     })
   }, { threshold: 0.1 })
-
   cards.forEach(card => observer.observe(card))
 }
 
@@ -211,9 +294,9 @@ window.clearSearch = () => {
 }
 
 window.toggleItemSelection = toggleItemSelection;
-
-// Init
-renderMenu()
+window.updateQuantity = updateQuantity;
+window.searchQuery = searchQuery;
+window.currentCategory = currentCategory;
 
 // Review Slider Logic
 const initReviewSlider = () => {
@@ -255,22 +338,31 @@ window.addEventListener('load', () => {
   const text = document.getElementById('loader-text');
 
   setTimeout(() => {
-    text.innerText = "Bager dejen sprød...";
+    if (text) text.innerText = "Bager dejen sprød...";
   }, 500);
 
   setTimeout(() => {
-    text.innerText = "Klar til servering!";
-    text.style.color = "var(--primary)";
+    if (text) {
+      text.innerText = "Klar til servering!";
+      text.style.color = "var(--primary)";
+    }
   }, 1200);
 
   setTimeout(() => {
-    loader.style.opacity = '0';
-    setTimeout(() => {
-      loader.style.display = 'none';
-      // Trigger initial reveal animations after loader is gone
-      const grid = document.querySelector('#pizza-grid');
-      const cards = grid.querySelectorAll('.pizza-card');
-      cards.forEach(card => card.classList.add('reveal'));
-    }, 800);
+    if (loader) {
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.style.display = 'none';
+        renderMenu(); // Initial render after loader
+      }, 800);
+    }
   }, 1600);
+});
+
+// Back to Top Visibility
+window.addEventListener('scroll', () => {
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    backToTop.classList.toggle('hide', window.scrollY < 400);
+  }
 });
