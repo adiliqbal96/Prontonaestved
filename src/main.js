@@ -64,8 +64,10 @@ const reviewsData = [
 ]
 
 
-// Cart Logic
+// Cart & Filter State
 let selectedItems = {} // Format: { id: quantity }
+let searchQuery = ''
+let currentCategory = 'alle'
 
 const updateQuantity = (id, delta) => {
   const currentQty = selectedItems[id] || 0
@@ -270,36 +272,26 @@ const renderMenu = () => {
   cards.forEach(card => observer.observe(card))
 }
 
-window.filterMenu = (category) => {
-  currentCategory = category
-  document.querySelectorAll('.category-card').forEach(card => {
-    const onclickAttr = card.getAttribute('onclick') || ''
-    card.classList.toggle('active', onclickAttr.includes(`'${category}'`))
-  })
-  renderMenu()
-}
-
-window.handleSearch = (value) => {
-  searchQuery = value
-  const clearBtn = document.querySelector('.clear-search')
-  if (clearBtn) {
-    clearBtn.classList.toggle('hide', !value)
-  }
-  renderMenu()
-}
-
-window.clearSearch = () => {
-  const input = document.getElementById('menu-search')
-  if (input) {
-    input.value = ''
-    handleSearch('')
-  }
-}
-
 window.toggleItemSelection = toggleItemSelection;
 window.updateQuantity = updateQuantity;
-window.searchQuery = searchQuery;
-window.currentCategory = currentCategory;
+window.handleSearch = (val) => {
+  searchQuery = val;
+  const clearBtn = document.querySelector('.clear-search');
+  if (clearBtn) clearBtn.classList.toggle('hide', !val);
+  renderMenu();
+};
+window.clearSearch = () => {
+  const input = document.getElementById('menu-search');
+  if (input) input.value = '';
+  window.handleSearch('');
+};
+window.filterMenu = (cat) => {
+  currentCategory = cat;
+  document.querySelectorAll('.category-card').forEach(card => {
+    card.classList.toggle('active', card.outerHTML.includes(`'${cat}'`));
+  });
+  renderMenu();
+};
 
 // Review Slider Logic
 const initReviewSlider = () => {
