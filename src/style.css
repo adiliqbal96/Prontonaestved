@@ -945,6 +945,30 @@ a {
     min-height: auto;
   }
 
+  /* Alignment Fixes for Headers and Sliders */
+  .featured-section {
+    padding: 0 !important;
+    margin-bottom: 2rem;
+  }
+
+  .section-divider,
+  .menu-group-header {
+    padding: 0 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .featured-slider {
+    margin: 0 -1.5rem 1rem;
+    padding: 1rem 1.5rem 2rem !important;
+    gap: 1.2rem;
+  }
+
+  .featured-card {
+    flex: 0 0 280px;
+    min-width: 280px;
+  }
+
   .pizza-card {
     display: flex;
     flex-direction: column;
