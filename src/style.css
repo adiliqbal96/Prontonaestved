@@ -305,6 +305,53 @@ h4 {
 }
 
 
+/* Quantity Controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--it-green);
+  border-radius: 100px;
+  padding: 4px;
+  gap: 12px;
+  z-index: 10;
+}
+
+.quantity-controls.overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--it-green);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.qty-btn:active {
+  transform: scale(0.9);
+}
+
+.qty-num {
+  font-weight: 800;
+  font-size: 1rem;
+  min-width: 20px;
+  text-align: center;
+  color: white;
+}
+
 
 /* Floating Elements - Hidden as they are redundant with Order Bar */
 .call-trigger {
