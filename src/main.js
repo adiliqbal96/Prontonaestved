@@ -30,23 +30,23 @@ const menuData = [
   { id: 24, name: "24. Tomat · Ost · Bresaola · Rucola · Parmesan", price: 103, category: "pizza", subCategory: "Gourmet", ingredients: ["Tomat", "Ost", "Bresaola", "Rucola", "Parmesan"], image: "images/pizza_24.png" },
   { id: 25, name: "25. Tomat · Ost · Rucola · Semidried Tomater", price: 90, category: "pizza", subCategory: "Gourmet", ingredients: ["Tomat", "Ost", "Rucola", "Semidried Tomater"], image: "images/pizza_25.png" },
   { id: 26, name: "26. Tomat · Ost · Basilikum · Kæmperejer", price: 98, category: "pizza", subCategory: "Gourmet", ingredients: ["Tomat", "Ost", "Tomat skiver", "Basilikum", "Kæmperejer"], image: "images/pizza_26.png" },
-  { id: 27, name: "27. Ost · Kartofler · Rosmarin · Olivenolie", price: 85, category: "pizza", subCategory: "Gourmet", ingredients: ["Ost", "Kartofler", "Rosmarin", "Olivenolie"], image: "https://images.unsplash.com/photo-1588315029754-2dd089d36a11?q=80&w=600&auto=format&fit=crop" },
-  { id: 28, name: "28. Trøffel · Mascarpone · Mozzarella...", price: 103, category: "pizza", subCategory: "Gourmet", ingredients: ["Trøffel", "Mascarpone", "Mozzarella", "Årstidens svampe", "Rucola", "Parmesan"], image: "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=600&auto=format&fit=crop" },
-  { id: 29, name: "29. Tomat · Ost · Peberfrugt · Løg...", price: 98, category: "pizza", subCategory: "Klassikere", ingredients: ["Tomat", "Ost", "Peberfrugt", "Artiskok", "Løg", "Champignon", "Soltørrede tomater"], image: "https://images.unsplash.com/photo-1544982503-9f984c14501a?q=80&w=600&auto=format&fit=crop" },
+  { id: 27, name: "27. Ost · Kartofler · Rosmarin · Olivenolie", price: 85, category: "pizza", subCategory: "Gourmet", ingredients: ["Ost", "Kartofler", "Rosmarin", "Olivenolie"], image: "images/pizza_27.png" },
+  { id: 28, name: "28. Trøffel · Mascarpone · Mozzarella...", price: 103, category: "pizza", subCategory: "Gourmet", ingredients: ["Trøffel", "Mascarpone", "Mozzarella", "Årstidens svampe", "Rucola", "Parmesan"], image: "images/pizza_28.png" },
+  { id: 29, name: "29. Tomat · Ost · Peberfrugt · Løg...", price: 98, category: "pizza", subCategory: "Klassikere", ingredients: ["Tomat", "Ost", "Peberfrugt", "Artiskok", "Løg", "Champignon", "Soltørrede tomater"], image: "images/pizza_29.png" },
 
   // PASTA
-  { id: 30, name: "30. Lasagne", price: 80, category: "pasta", ingredients: ["Lasagne"], image: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?q=80&w=600&auto=format&fit=crop" },
-  { id: 31, name: "31. Dagens Pasta", price: 80, category: "pasta", ingredients: ["2 slags hver dag"], image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=600&auto=format&fit=crop" },
+  { id: 30, name: "30. Lasagne", price: 80, category: "pasta", ingredients: ["Lasagne"], image: "images/pasta_30.png" },
+  { id: 31, name: "31. Dagens Pasta", price: 80, category: "pasta", ingredients: ["2 slags hver dag"], image: "images/pasta_31.png" },
 
   // SANDWICH
-  { id: 32, name: "32. Tomat · Ost · Laks · Salat · Lys Dressing", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Laks", "Salat", "Lys Dressing"], image: "https://images.unsplash.com/photo-1550507992-eb63ffee0224?q=80&w=600&auto=format&fit=crop" },
-  { id: 33, name: "33. Tomat · Ost · Salami · Salat · Lys Dressing", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Salami", "Salat", "Lys Dressing"], image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=600&auto=format&fit=crop" },
-  { id: 34, name: "34. Tomat · Ost · Tun · Salat · Lys Dressing", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Tun", "Salat", "Lys Dressing"], image: "https://images.unsplash.com/photo-1481070555726-e2fe8357725c?q=80&w=600&auto=format&fit=crop" },
-  { id: 35, name: "35. Tomat · Ost · Kylling · Salat · Pesto", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Kylling", "Salat", "Pesto"], image: "https://images.unsplash.com/photo-1628191010210-a59de33e5941?q=80&w=600&auto=format&fit=crop" },
-  { id: 36, name: "36. Tomat · Ost · Salat · Parmaskinke · Pesto", price: 75, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Salat", "Parmaskinke", "Pesto"], image: "https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=600&auto=format&fit=crop" },
-  { id: 37, name: "37. Tomat · Ost · Bresaola · Salat · Pesto", price: 75, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Bresaola", "Salat", "Pesto"], image: "https://images.unsplash.com/photo-1554433607-66b5efe9d304?q=80&w=600&auto=format&fit=crop" },
-  { id: 38, name: "38. Tomat · Ost · Kalkun · Salat · Pesto", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Kalkun", "Salat", "Pesto"], image: "https://images.unsplash.com/photo-1553909489-cf47ce8fff85?q=80&w=600&auto=format&fit=crop" },
-  { id: 39, name: "39. Mozzarella · Salat · Tomat · Pesto", price: 70, category: "sandwich", ingredients: ["Brød", "Mozzarella", "Salat", "Tomat", "Pesto"], image: "https://images.unsplash.com/photo-1528736235302-52922df5c122?q=80&w=600&auto=format&fit=crop" },
+  { id: 32, name: "32. Tomat · Ost · Laks · Salat · Lys Dressing", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Laks", "Salat", "Lys Dressing"], image: "images/sandwich_32.png" },
+  { id: 33, name: "33. Tomat · Ost · Salami · Salat · Lys Dressing", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Salami", "Salat", "Lys Dressing"], image: "images/sandwich_33.png" },
+  { id: 34, name: "34. Tomat · Ost · Tun · Salat · Lys Dressing", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Tun", "Salat", "Lys Dressing"], image: "images/sandwich_34.png" },
+  { id: 35, name: "35. Tomat · Ost · Kylling · Salat · Pesto", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Kylling", "Salat", "Pesto"], image: "images/sandwich_35.png" },
+  { id: 36, name: "36. Tomat · Ost · Salat · Parmaskinke · Pesto", price: 75, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Salat", "Parmaskinke", "Pesto"], image: "images/sandwich_36.png" },
+  { id: 37, name: "37. Tomat · Ost · Bresaola · Salat · Pesto", price: 75, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Bresaola", "Salat", "Pesto"], image: "images/sandwich_37.png" },
+  { id: 38, name: "38. Tomat · Ost · Kalkun · Salat · Pesto", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Kalkun", "Salat", "Pesto"], image: "images/sandwich_38.png" },
+  { id: 39, name: "39. Mozzarella · Salat · Tomat · Pesto", price: 70, category: "sandwich", ingredients: ["Brød", "Mozzarella", "Salat", "Tomat", "Pesto"], image: "images/sandwich_39.png" },
   { id: 40, name: "40. Tomat · Ost · Salat · Skinke · Lys Dressing", price: 70, category: "sandwich", ingredients: ["Brød", "Tomat", "Ost", "Salat", "Skinke", "Lys Dressing"], image: "https://images.unsplash.com/photo-1550507992-eb63ffee0224?q=80&w=600&auto=format&fit=crop" },
 
   // SALATER
